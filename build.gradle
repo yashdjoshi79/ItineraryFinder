@@ -1,0 +1,43 @@
+buildscript {
+	ext {
+		springBootVersion = '1.5.3.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+}
+
+task compile {
+	doLast {
+		println 'compiling source'
+	}
+}
+
+task compileTest(dependsOn: compile) {
+	doLast {
+		println 'compiling unit tests'
+	}
+}
+
+
+dependencies {
+	compile("org.springframework.boot:spring-boot-starter-web:1.5.3.RELEASE")
+	compile('org.springframework.boot:spring-boot-starter')
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+	compile("org.springframework.boot:spring-boot-devtools")
+	compile("org.springframework.boot:spring-boot-starter-thymeleaf")
+}

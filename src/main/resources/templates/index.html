@@ -1,0 +1,28 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+
+    <title>Fastest Travel</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+    <link rel="stylesheet" type="text/css" th:href="@{/assets/css/flight.css}" />
+</head>
+<body>
+<h1>Fastest Travel</h1>
+<p>Please enter the information in the form to see the fastest flight options. </p>
+<div class="form-container">
+    Flights Data Json : <textarea class="flights-data"></textarea>
+</div>
+<div class="form-container">
+    Passenger Origin: <input type="text" class="origin" />
+</div>
+<div class="form-container">
+    Pasenger Destination : <input type="text" class="destination" />
+</div>
+<input type="submit" value="Find Fastest Travel" class="submit-button" />
+<input type="submit" value="New Search" class="reset-button" />
+
+<div class="hidden fastest-travel-data"></div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script th:src="@{js/home.js}"></script>
+</html>
